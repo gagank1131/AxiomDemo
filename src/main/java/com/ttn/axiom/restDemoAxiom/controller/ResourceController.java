@@ -16,8 +16,9 @@ public class ResourceController {
 
   @GetMapping("/welcome/{name}")
   public String welcomeMessageToUser(
-          @RequestHeader(name = "Accept-Language", required = false) Locale locale, @PathVariable String name) {
-    String message =  messageSource.getMessage("good.morning.message", null, locale);
-    return message+" "+name;
+      @RequestHeader(name = "Accept-Language", required = false) Locale locale,
+      @PathVariable String name) {
+    String message = messageSource.getMessage("good.morning.message", null, locale);
+    return message + " " + name;
   }
 }
